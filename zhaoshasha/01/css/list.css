@@ -1,0 +1,34 @@
+.jl{
+	font-size: 40px;
+}
+.pj{
+	margin-top: 100px;
+}
+#list{
+	width:100%;
+	margin-top: 20px;
+	margin-bottom: 50px;
+	margin-left: 5px;
+	font-size:1.5rem;
+	display: flex;
+	font-family:"FontAwesome";
+	src: url('../fonts/fontawesome-webfont.eot?v=4.7.0');
+	color: #grey;
+}
+#list-left{
+	width:54%;
+	float: left;
+}
+#list-right{
+	margin-left: 25px;
+	width:46%;
+}
+a{
+	text-decoration: none;
+}
+#list-right a:hover{
+	color:darkslategray;
+}
+a:active{text-decoration: none;color:grey;}
+a:visited{text-decoration: none;color:grey;}
+a:link{text-decoration: none;color:grey;}
