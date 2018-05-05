@@ -1,0 +1,424 @@
+body {
+	margin: 0 auto;
+	font-family: 'Lora';
+	background: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("../img/bg.jpg");
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+}
+
+h1 {
+	text-align: center;
+	margin: 70px auto;
+}
+
+.title-up {
+	font-size: 30px;
+	color: orange;
+}
+
+.title-down {
+	color: white;
+	font-size: 40px;
+}
+
+#nav {
+	width: 100%;
+	height: 100px;
+	margin: 100px auto;
+	text-align: center;
+	background-size: cover;
+	background-color: rgba(47, 23, 15, .9);
+}
+
+#nav ul {
+	padding-top: 20px;
+	font-size: 20px;
+	text-align: center;
+	width: 450px;
+	display: flex;
+	/*flex布局*/
+	flex-direction: row;
+	/*定义主轴方向*/
+	justify-content: space-around;
+	/*两端对齐*/
+	margin: 0 auto;
+	color: white;
+}
+
+#nav ul li {
+	list-style: none;
+	float: left;
+	height: 30px;
+	text-align: center;
+	padding-left: 24px;
+	padding-right: 24px;
+	padding: 8px;
+}
+
+#nav ul li a {
+	padding-top: 20px;
+	text-decoration: none;
+	color: white;
+}
+
+#nav ul li a:hover {
+	color: orange;
+}
+
+.container-main1 {
+	box-sizing: border-box;
+	height: 520px;
+	margin: 0 auto;
+	margin-bottom: 50px;
+	margin-top: 50px;
+}
+
+.container-main1 .intro {
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+}
+
+.container-main1 .intro .intro-img {
+	display: block;
+	width: 900px;
+	height: 500px;
+	position: absolute;
+	border-radius: 5px;
+	left: 50%;
+	margin-left: -350px;
+	border-radius: 5px;
+}
+
+.container-main1 .intro .intro-text {
+	width: 500px;
+	height: 350px;
+	background-color: rgba(255, 255, 255, 0.85);
+	position: absolute;
+	z-index: 2;
+	box-sizing: border-box;
+	border-radius: 5px;
+	top: 50px;
+	left: 80px;
+	color: black;
+	font-size: 15px;
+	text-align: center;
+}
+
+.container-main1 .intro .intro-text .intro-main-text {
+	font-size: 15px;
+	line-height: 25px;
+	margin-left: 50px;
+	margin-right: 50px;
+	padding-top: 20px;
+	overflow: hidden;
+}
+
+.container-main1 .intro .intro-text .intro-button {
+	position: absolute;
+	width: 140px;
+	height: 60px;
+	background-color: #e6a756;
+	border-radius: 4px;
+	transition: all 0.3s;
+	left: 150px;
+	top: 320px;
+}
+
+.container-main1 .intro .intro-text .intro-button .intro-button-text {
+	margin-top: 17px;
+	text-align: center;
+	font-size: 17px;
+	color: white;
+	display: block;
+}
+
+.intro-text-up {
+	font-size: 15px;
+}
+
+.intro-text-down {
+	font-size: 30px;
+	line-height: 30px;
+	display: block;
+}
+
+#container-main2 {
+	width: 100%;
+	height: 430px;
+	margin: 80px auto;
+	padding-top: 50px;
+	background-size: cover;
+	background-color: rgba(230, 167, 86, .9);
+}
+
+.main2-content {
+	width: 60%;
+	height: 300px;
+	border: 5px solid rgba(255, 255, 255, .85);
+	margin: 30px auto;
+	border-radius: .25rem;
+}
+
+.main2-content-text {
+	width: 99%;
+	height: 290px;
+	background-color: rgba(255, 255, 255, .85);
+	margin: 5px auto;
+	border-radius: .25rem;
+	text-align: center;
+	overflow: hidden;
+}
+
+.promise {
+	padding-top: 20px;
+	padding-bottom: 3px;
+}
+
+.to-you {
+	line-height: 5px;
+	font-size: 30px;
+}
+
+.promise-text {
+	font-size: 15px;
+	line-height: 25px;
+	margin-left: 50px;
+	margin-right: 50px;
+	padding-top: 20px;
+}
+
+#footer {
+	width: 100%;
+	margin-top: 80px;
+	height: 120px;
+	margin-bottom: -5px;
+	text-align: center;
+	background-size: cover;
+	background-color: rgba(47, 23, 15, .9);
+}
+
+.footer-text {
+	color: rgba(255, 255, 255, .3);
+	padding-top: 50px;
+}
+
+#index,
+#about,
+#product{
+	box-sizing: border-box;
+	height: 800px;
+	margin: 0 auto;
+	margin-bottom: 50px;
+	margin-top: 50px;
+	text-align:center;
+}
+
+#index .intro{
+		width: 100%;
+		height: 100%;
+		margin: 0 auto;
+		position: relative;
+	}
+
+#index .intro  .intro-img{
+		display: block;
+		position: absolute;
+		left: 300px;
+		top: 0;
+		max-height: 100%;
+		border-radius: 5px;
+	}
+
+#index .intro .intro-text{
+		width: 500px;
+		height: 296px;
+		background-color: rgba(255, 255, 255, 0.85);
+		position: absolute;
+		z-index: 2;
+		box-sizing: border-box;
+		border-radius: 5px;
+		top: 50px;
+		left: 100px;
+		color: black;
+		overflow: hidden;
+	}
+
+#index .intro .intro-text .intro-btn{
+		position: absolute;
+		width: 140px;
+		height: 60px;
+		background-color: #e6a756;
+		border-radius: 4px;
+		transition: all 0.3s;
+		left: 120px;
+		top:265px;
+		
+	}
+
+
+#index .intro .intro-text .intro-btn a{
+	margin-top:15px ;
+	text-align: center;
+	font-size: 20px;
+	color: white;
+	display: block;
+}
+
+#about .about-intr{
+	height: 100%;
+ 	width: 100%;
+ 	position: relative;
+}
+
+#about .about-intr .about-img{
+	display: block;
+    width: 900px;
+	height: 300px;
+	position: absolute;
+	border-radius: 5px;	
+	left: 50%;
+	margin-left: -450px;
+	border-radius: 5px;
+}
+
+#about .about-intr .about-text{
+	position: absolute;
+  	background-color: rgba(255, 255, 255, 0.85);
+  	width: 600px;
+  	height: 200px;
+  	left: 50%;
+  	top: 250px;
+  	margin-left: -300px;
+  	border-radius: 5px;
+  	overflow: hidden;
+}
+
+#about .about-intr{
+	height: 100%;
+ 	width: 100%;
+ 	position: relative;
+}
+
+#about .about-intr .about-img{
+	display: block;
+    width: 900px;
+	height: 300px;
+	position: absolute;
+	border-radius: 5px;	
+	left: 50%;
+	margin-left: -450px;
+	border-radius: 5px;
+}
+
+#about .about-intr .about-text{
+	position: absolute;
+  	background-color: rgba(255, 255, 255, 0.85);
+  	width: 600px;
+  	height: 200px;
+  	left: 50%;
+  	top: 250px;
+  	margin-left: -300px;
+  	border-radius: 5px;
+  	overflow: hidden;
+}
+#product .product-intr{
+	height: 100%;
+ 	width: 100%;
+ 	position: relative;
+}
+
+#product .product-intr .product-img{
+	display: block;
+    width: 500px;
+	height: 400px;
+	position: absolute;
+	border-radius: 5px;	
+	left: 50%;
+	margin-left: -250px;
+	border-radius: 5px;
+}
+
+#product .product-intr .product-text1{
+	position: absolute;
+  	background-color: rgba(255, 255, 255, 0.85);
+  	width: 500px;
+  	height: 100px;
+  	left: 50%;
+  	top: -70px;
+  	margin-left: 180px;
+  	border-radius: 5px;
+  	overflow: hidden;
+}
+#product .product-intr .product-text2{
+	position: absolute;
+  	background-color: rgba(255, 255, 255, 0.85);
+  	width: 500px;
+  	height: 150px;
+  	left: 50%;
+  	top: 260px;
+  	margin-left: -650px;
+  	border-radius: 5px;
+  	overflow: hidden;
+}
+
+#store {
+	width: 100%;
+	height: 800px;
+	overflow: hidden;
+	margin: 50px auto;
+	padding-top: 10px;
+	background-size: cover;
+	background-color: rgba(230, 167, 86, .9);
+}
+.store-box {
+	width: 60%;
+	height: 760px;
+	overflow: hidden;
+	border: 5px solid rgba(255, 255, 255, .85);
+	margin: 5px auto;
+	border-radius: .25rem;
+}
+.store-border {
+	width: 98%;
+	height: 750px;
+	background-color: rgba(255, 255, 255, .85);
+	margin: 5px auto;
+	border-radius: .25rem;
+	padding-top: 2px;
+	text-align: center;
+}
+#store .store-box .store-border .time{
+	margin: 0 auto;
+	margin-top: 10px;
+	overflow: hidden;
+	width: 50%;
+	height: 300px;
+	display: flex;
+	flex-direction: column;
+	
+}
+
+#store .store-box .store-border .time p{
+	width: 100%;
+	border-bottom: 1px solid rgba(230, 167, 86, 0.5);
+	margin: 0 auto;
+	margin-top: 5px;
+	padding-bottom: 5px;
+	font-size: 18px;
+	color: black;
+}
+#store .store-box .store-border .time p .week{
+	float: left;
+}
+#store .store-box .store-border .time p .date{
+	float: right;
+}
+
+.addr,
+.contact,
+.tel{
+	text-align: center;
+	color: black;
+}
