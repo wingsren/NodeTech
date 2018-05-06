@@ -1,14 +1,17 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-		<title>响应式布局</title>
+		<title>homework03响应式</title>
+		<link media="(min-width:500px)" href="css/style.css" rel="stylesheet" />
+		<link media="(max-width:400px)" href="css/mobile.css" rel="stylesheet" />
 		<link href="css/style.css" rel="stylesheet">
 	</head>
 
 	<body>
+		
 		<div id="box">
 			<h1>
 		    	<span class="title-up">免费引导4商业主题</span>
@@ -21,17 +24,20 @@
 						<a href="index.html">首页</a>
 					</li>
 					<li>
-						<a href="about.html">关于</a>
+						<a>关于</a>
 					</li>
 					<li>
-						<a href="product.html">产品</a>
+						<a>产品</a>
 					</li>
 					<li>
-						<a href="store.html">商店</a>
+						<a>商店</a>
 					</li>
 				</ul>
 			</div>
-
+			
+			
+			
+			
 			<div id="container">
 				<div class="container-main1">
 					<div class="intro">
@@ -69,7 +75,57 @@
 			</div>
 
 		</div>
-	
+        <div id="mobile">
+			<!--手机端导航条-->
+			<div id="mobile-nav">
+				<div class="mobile-top">
+					<span>开始BOOSTRAP</span>
+				</div>
+				<div class="menu">
+					<label for="checkbox">菜单</label>
+				</div>
+			</div>
+						<!--列表就会被隐藏-->
+				<input id="checkbox" type="checkbox" name="menu" id="" value="menu">
+					<div id="menu-nav">
+						<ul>
+							<li>首页</li>
+							<li>关于</li>
+							<li>产品</li>
+							<li>商店</li>
+						</ul>
+					</div>
+			<div id="mobile-container">
+				<div class="top">
+					<img src="img/intro.jpg" />
+					<div class="top-text">
+						<h2>
+							新鲜的咖啡<br>
+							值得喝
+						</h2>
+						<p>我们每一杯优质手工咖啡都是从本地来源的手工挑选的原料开始的。一旦你尝试，我们的咖啡将是一个幸福的除了你每天早上的例行程序-我们保证它!</p>
+						<div class="top-button">
+							<span class="btn-text">参观</span>
+						</div>
+					</div>
+				</div>
+				<div class="middle">
+					<div class="middle-border">
+						<div class="middle-box">
+							<h2>
+							我们的承诺<br>
+							给你
+						</h2>
+						<p>当您走进我们的店开始您的一天，我们致力于为您提供友好的服务，欢迎的气氛，以及最重要的是，优质的产品，以最高质量的成分。如果你不满意，请让我们知道，我们会尽我们所能使事情正确!</p>
+						</div>
+					</div>
+				</div>
+				<div class="foot">
+					<p>Copyright © Your Website 2018</p>
+				</div>
+			</div>	
+			
+	</div>
 	</body>
 
 </html>
