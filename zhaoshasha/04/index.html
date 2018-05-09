@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<title>用户注册</title>
+		<link href="css/style.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div id="regist">
+			<span class="title">用户注册</span>
+			<div class="content">
+				<form action="http://1ke.co/backend/teach/js/post.php" method="post" onsubmit="return CheckPost();" name="myform" >
+				<div id="info"></div>
+	                        用户名：<input type="text" name="username" id="username"  onBlur="checkuser()"/><br> 
+	                        密码：<input type="password" name="pwd" id="pwd" placeholder="密码长度不小于6位"/><br /> 
+	                        邮箱：<input type="email" name="email" id="email" size="20"/><br /> 
+	                        性别：<input type="radio" name="sex" value="男" id="man"/>男
+	                  <input type="radio" name="sex" value="女" id="woman"/>女<br />
+	                        擅长技能： <input type="checkbox" name="skill"  value="html" />html 
+	                      <input type="checkbox" name="skill" value="css" />css
+	                      <input type="checkbox" name="skill" value="javascript" />javascript
+	                      <input type="checkbox" name="skill" value="javascript" />vue
+	                      <input type="checkbox" name="skill" value="photoshop" />photoshop<br /> 
+	                        教育水平：<select name="edu" id="edu">
+		                  <option value="专科" selected="selected">专科</option>
+		                  <option value="本科">本科</option>
+		                  <option value="研究生">研究生</option>
+		                  <option value="博士">博士</option>
+	                     </select><br />
+	            <div class="button">
+	        	<input type="submit" name="submit" value="提交" />
+	            <input type="reset" name="reset" value="重置" /> 
+	        </div>
+                </form>
+			</div>
+			<div id="msg"></div>
+		</div>
+		
+
+        <script>
+        	var xmlHttp;           
+            function createxmlHttpRequest() { 
+                if (window.ActiveXObject) { 
+                xmlHttp = new ActiveXObject("Microsoft.XMLHTTP"); 
+                } else if (window.XMLHttpRequest) { 
+                xmlHttp = new XMLHttpRequest(); 
+            }
+          } 
+            function doPOST(url,data){
+                createxmlHttpRequest(); 
+                var msg= document.getElementById("msg");
+                xmlHttp.open("POST",url,true); 
+                xmlHttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+                xmlHttp.send(data);     
+                xmlHttp.onreadystatechange = function() { 
+                    if ((xmlHttp.readyState == 4) && (xmlHttp.status == 200)) {                  
+                        msg.innerHTML=xmlHttp.responseText;
+                        msg.setAttribute("class", "show"); 
+                    }
+                }   
+           }
+			
+        	function CheckPost(){
+        		if(myform.username.value == "") {
+                document.getElementById("info").innerHTML="用户名不能为空";
+                myform.username.focus();
+                return false;
+                }
+        		if(myform.pwd.value.length < 6){
+                document.getElementById("info").innerHTML="密码不能小于六位";
+                myform.pwd.focus();
+                return false;
+                } 
+                if(myform.email.value == ""){
+                document.getElementById("info").innerHTML="邮箱不能为空";
+                myform.email.focus();
+                return false;
+                } 
+             
+                var sk="";
+                var skills = document.getElementsByName("skill"); 
+                for(var i = 0; i < skills.length; i++){
+                    if(skills[i].checked) {
+                        sk += skills[i].value;
+                        sk += " ";
+                    }
+        	    }
+        	    if(myform.username.value != "" && myform.pwd.value != "" && myform.email.value != "" && myform.sex.value != "" && sk != "" && myform.edu.value!= "") {    
+        	    	document.write("用户名:"+myform.username.value+"<br>邮箱:"+myform.email.value+""+"<br>性别:"+myform.sex.value+"<br>擅长技能:"+sk+"<br>教育水平:"+myform.edu.value);
+                    //myform.innerHTML= "用户名:"+myform.username.value+"<br>邮箱:"+myform.email.value+""+"<br>性别:"+myform.sex.value+"<br>擅长技能:"+sk+"<br>教育水平:"+myform.edu.value;               
+                       return false; 
+                }
+        	    document.getElementById("info").innerHTML="请详细填写信息";         
+        	}
+  	 
+  	        function checkuser(){
+              var url="http://www.1ke.co/backend/teach/js/checkuser_post.php";
+              data="username="+myform.username.value+"&pwd="+myform.pwd.value; 
+              doPOST(url,data);    
+            } 
+  	    
+		</script>
+
+	</body>
+
+</html>

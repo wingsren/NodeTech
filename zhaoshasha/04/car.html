@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>汽车品牌信息</title>
+	</head>
+	<body>
+		<style>
+			#btn{
+				width: 150px;
+				height: 50px;
+				font-size: 20px;
+			}
+			
+		</style>
+		<input type="button" id="btn" value="汽车品牌信息" onclick="requestCar()"></button>
+		<div id="carInfo"></div>
+		<script>
+			function requestCar() {
+	            var xmlhttp;
+	            if(window.XMLHttpRequest) {
+		            xmlhttp=new XMLHttpRequest();
+	            }
+	            else {
+		            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	            }
+	            xmlhttp.onreadystatechange=function() {
+		            if(xmlhttp.readyState==4 && xmlhttp.status==200) {
+		            	var data=JSON.parse(this.responseText);
+		            	var car=`${data.cars}`;
+			            document.getElementById("carInfo").innerHTML=car;
+		            }
+	            }
+	        xmlhttp.open("POST", "http://www.1ke.co/backend/teach/js/json.php", true);
+	        xmlhttp.send();
+            }
+		</script>
+	</body>
+</html>
