@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<title>用户注册jQuery</title>
+		<link rel="stylesheet" href="css/mobile.css" />
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+
+	<body>
+		<div id="regist">
+			<span class="title">用户注册</span>
+			<div class="content">
+				<form method="post" action="http://1ke.co/backend/teach/js/post.php" name="myform">
+				<div id="info"></div>
+	                        用户名：<input type="text" name="username" id="username" onBlur="checkuser()"/>
+	                    <span class='state1'>请输入用户名</span> <br />
+	                        密码：<input type="password" name="pwd" id="pwd"/>
+	                    <span class='state1'>请输入密码</span><br/> 
+	                        邮箱：<input type="email" name="email" id="email" size="20"/>
+	                    <span class='state1'>请输入邮箱</span><br/> 
+	                        性别：<input type="radio" name="sex" value="男" id="man"/>男
+	                  <input type="radio" name="sex" value="女" id="woman"/>女<br />
+	            <div class="skill">
+	                                               擅长技能： <input type="checkbox" name="skill"  value="html" />html 
+	                            <input type="checkbox" name="skill" value="css" />css
+	                            <input type="checkbox" name="skill" value="javascript" />javascript
+	                            <input type="checkbox" name="skill" value="javascript" />vue
+	                            <input type="checkbox" name="skill" value="photoshop" />photoshop<br /> 
+	            </div>
+	                      
+	                       教育水平：<select name="edu" id="edu">
+		                  <option value="专科" selected="selected">专科</option>
+		                  <option value="本科">本科</option>
+		                  <option value="研究生">研究生</option>
+		                  <option value="博士">博士</option>
+	                     </select><br />
+	            <div class="button">
+	        	<input type="submit" id="submit" name="submit" value="提交"/>
+	            <input type="reset" id="reset" name="reset" value="重置" /> 
+	           
+	        </div>
+                </form>
+			</div>
+			<div id="msg"></div>
+		</div>
+		
+        <script type="text/javascript" src="js/jquery3.3.1.js" ></script>
+        <script>
+        	var xmlHttp;           
+            function createxmlHttpRequest() { 
+                if (window.ActiveXObject) { 
+                xmlHttp = new ActiveXObject("Microsoft.XMLHTTP"); 
+                } 
+                else if (window.XMLHttpRequest) {
+                xmlHttp = new XMLHttpRequest(); 
+                }
+            } 
+            function doPOST(url,data){
+                createxmlHttpRequest(); 
+                var msg= document.getElementById("msg");
+                xmlHttp.open("POST",url,true); 
+                xmlHttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+                xmlHttp.send(data);     
+                xmlHttp.onreadystatechange = function() { 
+                    if ((xmlHttp.readyState == 4) && (xmlHttp.status == 200)) {                  
+                        msg.innerHTML=xmlHttp.responseText;
+                        msg.setAttribute("class", "show"); 
+                    }
+                }   
+            }
+         
+  	       
+  	        $(function check(){
+                var ok1=false;
+                var ok2=false;
+                var ok3=false;
+                var ok4=false;
+                var ok5=false;
+                var ok6=false;
+                var num=0;
+                // 验证用户名
+                $('input[name="username"]').focus(function(){
+                    $(this).next().text('用户名应该为3-20位之间').removeClass('state1').addClass('state2');
+                    }).blur(function(){
+                        if($(this).val().length >= 3 && $(this).val().length <=12 && $(this).val()!=''){
+                            $(this).next().text('输入成功').removeClass('state1').addClass('state4');
+                            ok1=true;
+                            }
+                        else{
+                            $(this).next().text('用户名应该为3-20位之间').removeClass('state1').addClass('state3');
+                            }
+                });
+  
+                //验证密码
+                $('input[name="pwd"]').focus(function(){
+                    $(this).next().text('密码应该为6-20位之间').removeClass('state1').addClass('state2');
+                    }).blur(function(){
+                        if($(this).val().length >= 6 && $(this).val().length <=20 && $(this).val()!=''){
+                            $(this).next().text('输入成功').removeClass('state1').addClass('state4');
+                            ok2=true;
+                        }
+                        else{
+                            $(this).next().text('密码应该为6-20位之间').removeClass('state1').addClass('state3');
+                           }
+                });
+  
+         
+                //验证邮箱
+                $('input[name="email"]').focus(function(){
+                $(this).next().text('请输入正确的EMAIL格式').removeClass('state1').addClass('state2');
+                }).blur(function(){
+                    if($(this).val().search(/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/)==-1){
+                        $(this).next().text('请输入正确的EMAIL格式').removeClass('state1').addClass('state3');
+                    }
+                    else{
+                        $(this).next().text('输入成功').removeClass('state1').addClass('state4');
+                        ok3=true;
+                       }
+                });
+                
+                
+                //性别
+                if (($(":radio[name=sex][checked]").val()) == undefined || ($(":radio[name=sex][checked]").val()) == null) {  
+                      $(':radio[name=sex]').siblings("font").html("不能为空!");  
+                       num++;  
+                    } else {  
+                       $(':radio[name=sex]').siblings("font").html("");  
+                       ok4=true;
+                   }      
+
+                
+                //擅长技能
+                if ($.trim($('.skill').val()) == '') {  
+                       $('.skill').siblings("font").html("不能为空!");  
+                        num++;  
+                    } else {  
+                        $('.skill').siblings("font").html("");  
+                        ok5=true;
+                    }    
+
+                
+                
+                //教育水平
+                if ($.trim($('#edu').val()) == '') {
+                        $('#edu').siblings("font").html("不能为空!");  
+                        num++;  
+                    } else {  
+                        $('#edu').siblings("font").html(""); 
+                        ok6=true;
+                    }            
+                   if (num > 0) {  
+                        return false;  
+                    }                     
+                      
+
+  
+                //提交按钮,所有验证通过方可提交
+//              
+                $('#submit').click(function(){
+                    if(ok1 && ok2 && ok3 && ok4 && ok5 && ok6){
+                        myform.innerHTML= "用户名:"+myform.username.value+"<br>邮箱:"+myform.email.value+""+"<br>性别:"+myform.sex.value+"<br>擅长技能:"+sk+"<br>教育水平:"+myform.edu.value;   
+                    }else{
+                        return false;
+                    }
+                });
+//              
+//              if(ok1 && ok2 && ok3 && ok4 && ok5 && ok6){
+//                      myform.innerHTML= "用户名:"+myform.username.value+"<br>邮箱:"+myform.email.value+""+"<br>性别:"+myform.sex.value+"<br>擅长技能:"+sk+"<br>教育水平:"+myform.edu.value;   
+//                  }
+//              if(myform.username.value != "" && myform.pwd.value != "" && myform.email.value != "" && myform.sex.value != "" && sk != "" && myform.edu.value!= "") {    
+//      	    	document.write("用户名:"+myform.username.value+"<br>邮箱:"+myform.email.value+""+"<br>性别:"+myform.sex.value+"<br>擅长技能:"+sk+"<br>教育水平:"+myform.edu.value);
+//                  //myform.innerHTML= "用户名:"+myform.username.value+"<br>邮箱:"+myform.email.value+""+"<br>性别:"+myform.sex.value+"<br>擅长技能:"+sk+"<br>教育水平:"+myform.edu.value;               
+//                     return false; 
+//              }
+//      	    document.getElementById("info").innerHTML="请详细填写信息"; 
+      
+            });
+            
+            
+//         $('#username').blur(function(){
+//	            var url="http://www.1ke.co/backend/teach/js/checkuser_post.php";
+//              data="username="+myform.username.value+"&pwd="+myform.pwd.value+myform.email.value; 
+//              doPOST(url,data);    
+//         });
+            
+            function checkuser(){
+              var url="http://www.1ke.co/backend/teach/js/checkuser_post.php";
+              data="username="+myform.username.value+"&pwd="+myform.pwd.value+myform.email.value; 
+              doPOST(url,data);    
+            } 
+  	    
+		</script>
+
+	</body>
+
+</html>
