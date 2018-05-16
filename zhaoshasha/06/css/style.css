@@ -1,0 +1,314 @@
+body{
+	margin: 0 auto;
+}
+.box{
+	margin: 70px auto;
+	width: 100%;
+	height: 100%;	
+}
+/*左侧导航样式*/
+.left{
+	position: absolute;
+	width: 300px;
+	height: 100%;
+	margin-left: 40px;
+	margin-top: 160px;
+    position: fixed;
+    overflow: hidden;
+	
+}
+.left .left-up{
+	width:60px;
+	height: 80px;
+	border:3px solid #000;
+}
+.left .left-up span{
+	display: block;
+	margin: 5px auto;
+	text-align: center;
+	line-height: 20px;
+	font-size: 20px;
+	font-weight: bold;	
+}
+.left .left-middle{
+	margin-top: 40px;
+}
+.left .left-down{
+	margin-top: 30px;
+}
+.left .left-down li{
+	list-style: none;
+	padding: 5px;
+	color: grey;
+}
+.left .left-down li a{
+	text-decoration: none;
+	color: grey;
+}
+/*商品主页浏览样式*/
+.right{
+	width: 1000px;
+	height: 100%;
+	margin-top: 50px;
+	margin-bottom: 100px;
+	display: flex;
+	flex-direction: column;
+}
+.right #lunbobox{
+	width: 980px;
+	height: 560px;
+}
+.right #lunbobox .lunbo{
+	width: 977px;
+	height: 553px;
+}
+.lunbo img {
+	width:977px;
+	height:553px;
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+
+#lunbobox ul {
+	width:285px;
+	position:absolute;
+	margin-top: 0px;
+	
+	
+	
+}
+#lunbobox ul li {
+	cursor:pointer;
+	width:10px;
+	height:4px;
+	border:1px solid #cccccc;
+	float:left;
+	list-style:none;
+	background:#cccccc;
+	text-align:center;
+	margin:0px 5px 0px 0px;
+}
+#toleft {
+	display:none;
+	width:30px;
+	height:100px;
+	font-size:40px;
+	line-height:100px;
+	text-align:center;
+	color:#f4f4f4;
+	/*background:#cccccc;
+	*/
+    /*background:url("../images/toleft.jpg")no-repeat center;
+	*/
+    position:absolute;
+	top:90px;
+	left:12px;
+	cursor:pointer;
+	z-index:99;
+	opacity:0.4;
+}
+#toright {
+	display:none;
+	width:30px;
+	height:100px;
+	font-size:40px;
+	line-height:100px;
+	text-align:center;
+	color:#f4f4f4;
+	/*background:#cccccc;
+	*/
+    position:absolute;
+	top:90px;
+	right:0px;
+	cursor:pointer;
+	z-index:99;
+	opacity:0.4;
+}
+
+
+
+.right .right-bottom{
+	width: 980px;
+	height: 400px;
+	margin-top: 50px;
+	display: flex;
+	justify-content: space-between;
+}
+.right .right-bottom .right-bottom-1{
+	width: 300px;
+	height: 400px;
+	background: rgb(245,246,241);
+	font-size: 18px;
+}
+.right .right-bottom .right-bottom-1 a{
+	text-decoration: none;
+	color: #000;
+}
+.right .right-bottom .right-bottom-1 .intr1{
+	width: 100px;
+	height: 40px;
+	border: 3px solid #000;
+	margin: 30px auto;
+	text-align: center;
+}
+.right .right-bottom .right-bottom-1 .intr2{
+	width: 130px;
+	height: 40px;
+	border: 3px solid #000;
+	margin: 30px auto;
+	text-align: center;
+}
+.right .right-bottom .right-bottom-1 .intr3{
+	width: 160px;
+	height: 40px;
+	border: 3px solid #000;
+	margin: 30px auto;
+	text-align: center;
+}
+.right .right-bottom .right-bottom-1 .intr1 span{
+	display: block;
+	margin-top: 8px;
+	letter-spacing: 3px;
+	font-weight: bold;
+}
+.right .right-bottom .right-bottom-1 .intr2 span{
+	display: block;
+	margin-top: 8px;
+	letter-spacing: 3px;
+	font-weight: bold;
+}
+.right .right-bottom .right-bottom-1 .intr3 span{
+	display: block;
+	margin-top: 8px;
+	letter-spacing: 3px;
+	font-weight: bold;
+}
+
+/*商品详情样式*/
+.right2{
+	width: 1000px;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+.right2 .left{
+	margin-top: 20px;
+	width: 500px;
+	height: 620px;
+	position: absolute;
+}
+.right2 .left img{
+	width: 500px;
+	height: 620px;
+}
+
+.right2 .right{
+	margin: 0px auto;
+	margin-left: 630px ;
+	width: 400px;
+	height: 600px;
+}
+.right2 .right .cart-list{
+	width: 240px;
+	height: 50px;
+	margin-left: 180px;
+	background: #000;
+	font-size: 15px;
+}
+.right2 .right .cart-list img{
+	position: absolute;
+	margin-top: 8px;
+	margin-left: 2px;
+}
+.right2 .right .cart-list #cart-info{
+    margin-left: 50px;
+    margin-top: 15px;
+	color: white;
+}
+.right2 .right .cart-list #cart-info .num{
+    margin-left: 15px;
+}
+.right2 .right .cart-list #cart-info .items{
+    margin-left: 5px;
+
+}
+.right2 .right .cart-list .check{
+	float: right;
+	padding-right: 5px;
+	color: white;
+}
+.right2 .right .brand-info{
+	width: 400px;
+	height: 500px;
+}
+
+.right2 .right .menu img{
+	margin-top: 50px;
+	width: 15px;
+	height: 15px;
+	margin-bottom: -3px;
+}
+.right2 .right .menu span{
+	font-size: 15px;
+	color: #ada29c;
+}
+.right2 .right .brand{
+	margin-top: 80px;
+	font-weight: bold;
+	font-size: 20px;
+}
+.right2 .right .price{
+	margin-top: 30px;
+	font-size: 17px;
+	color: #70758b;
+}
+.right2 .right .intro{
+	width: 380px;
+	margin-top: 30px;
+	height: 110px;
+	color: #70758b;
+	line-height: 30px;
+	font-size: 13px;
+}
+.right2 .right .source{
+	margin-top: 30px;
+	color: #70758b;
+	font-size: 15px;
+}
+.right2 .right .source span{
+	color: greyy;
+}
+.right2 .right .qun{
+	margin-top: 30px;
+	letter-spacing: 5px;
+	font-size: 10px;
+	color: silver;
+}
+.right2 .right .input{
+	width: 50px;
+	height: 20px;
+	margin-top: 10px;
+	border: 1px solid silver;
+}
+.right2 .right button{
+	display: block;
+	width: 100px;
+	height: 50px;
+	margin-top: 30px;
+	background: #000;
+	border: none;
+	color: white;
+	font-size: 15px;
+}
+.right2 .right .share img{
+	width: 15px;
+	height: 15px;
+	margin-bottom: -3px;
+}
+.right2 .right .share{
+	margin-top: 30px;
+	color: #70758b;
+	font-size: 13px;
+}
+
