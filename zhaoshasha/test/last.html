@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<canvas id="myCanvas">error</canvas>
+		<script type="text/javascript" src="js/jquery-1-11.1-min.js" ></script>
+		<script type="text/javascript">
+			var canvas = document.getElementById('myCanvas');
+			var ctx = canvas.getContext('2d');
+			ctx.fillStyle = '#4169E1';
+			ctx.fillRect(10, 10, 100, 100);
+			ctx.font = "20px Georgia";
+			ctx.fillText("hello", 40, 150);
+            $(function(){
+            	html2canvas(myCanvas,{
+            		onrendered:function(canvas){
+            			canvas.setAttribute('id','myCanvas');
+            			$('#myCanvas').appendChild(canvas);
+           
+            		}
+            	})
+            })
+		</script>
+		
+		<script type="text/javascript" src="js/html2canvas.js"></script>
+		<script type="text/javascript" src="js/canvas2image.js"></script>
+		<script type="text/javascript" src="js/jquery-base64.js" ></script>
+		
+	</body>
+
+</html>
