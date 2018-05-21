@@ -15,11 +15,17 @@
 			ctx.fillRect(10, 10, 100, 100);
 			ctx.font = "20px Georgia";
 			ctx.fillText("hello", 40, 150);
-
+            function convertImageToCanvas(img) {
+var canvas = document.createElement("canvas");
+canvas.width = img.width;
+canvas.height = img.height;
+canvas.getContext("2d").drawImage(img, 50, 50);
+return canvas;
+}
 			function convertCanvasToImage(canvas) {
-				var image = new Image();
-				image.src = canvas.toDataURL("image/png");
-				return image;
+				var img = new Img();
+				img.src = canvas.toDataURL("img/png");
+				return img;
 			}
 		</script>
 		<script type="text/javascript" src="js/html2canvas.js"></script>
