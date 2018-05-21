@@ -1,0 +1,124 @@
+@-webkit-viewport{
+    width:device-width;
+}
+@-moz-viewport{
+    width:device-width;
+}
+@-ms-viewport{
+    width:device-width;
+}
+@-o-viewport{
+    width:device-width;
+}
+@viewport{
+    width:device-width;
+}
+html,body{
+    min-height:100%;
+}
+body{
+    margin:0 auto;
+}
+header{
+	width: 320px;
+	height: 40px;
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+	font-size: 10px;
+	line-height: 40px;
+	border-bottom: 1px solid rgba(0,0,0,.3) ;
+	overflow: hidden;
+}
+header .item1{
+	width: 203px;
+	height: 40px;
+	display: block;
+	float: left;
+	margin-left: 3px;
+}
+header .item1 .bs{
+	float: left;
+}
+header .item1 .kind{
+	color: #808080;
+	margin-left: -2px;
+	display: block;
+	float: right;
+}
+header .item2{
+	width: 117px;
+	height: 40px;
+	float: right;
+	margin-left: -2px;
+	margin-right: 3px;
+	color: #808080;
+}
+header .item2 img{
+	width: 20px;
+	height: 20px;
+	margin-bottom: -7px;
+}
+header .item2 .in{
+margin-right: 3px;
+}
+section{
+	width: 220px;
+	height: 500px;
+	margin: 15px auto;
+	color: #000;
+}
+section .pic{
+	width: 60px;
+	height: 60px;
+	margin: auto;
+}
+section .pic img{
+	width: 60px;
+	height: 60px;
+	border-radius: 10%;
+}
+section .username,.psd{
+	display: block;
+	border-radius: .3rem;
+	width: 220px;
+	height: 30px;
+	
+}
+.myform .un{
+	color: #000;
+	font-size: 15px;
+	display: block;
+	margin-top: 30px;
+
+}
+.myform .ps{
+	display: block;
+	color: #000;
+	font-size: 15px;
+	padding-top: 30px;
+}
+.myform .ps .fs{
+	color: gray;
+	font-size: 12px;
+	float: right;
+}
+.myform .sign{
+	width: 220px;
+	height: 30px;
+	margin-top: 30px;
+	background: purple;
+	font-size: 15px;
+	color: white;
+	border-radius: .3rem;
+}
+section footer{
+	text-align: center;
+	font-size: 12px;
+	margin-top: 10px;
+	color: gray;
+}
+section footer .up{
+	color: royalblue;
+}
+

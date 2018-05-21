@@ -1,0 +1,98 @@
+body{
+	margin: 0 auto;
+}
+header{
+	width: 100%;
+	height: 50px;
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+	font-size: 18px;
+	line-height: 50px;
+	border-bottom: 1px solid rgba(0,0,0,.3) ;
+	overflow: hidden;
+}
+header .item1{
+	width: 400px;
+	height: 50px;
+	margin-left: 50px;
+}
+header .item1 .kind{
+	color: #808080;
+	margin-left: 15px;
+}
+header .item2{
+	width: 200px;
+	height: 50px;
+	margin-right: 50px;
+	float: right;
+	color: #808080;
+}
+header .item2 img{
+	width: 20px;
+	height: 20px;
+	margin-bottom: -7px;
+}
+header .item2 .in{
+	margin-left: 15px;
+}
+header .item2 .out{
+	margin-left: 15px;
+}
+section{
+	width: 300px;
+	height: 500px;
+	margin: 20px auto;
+	color: #000;
+}
+section .pic{
+	width: 80px;
+	height: 80px;
+	margin: auto;
+}
+section .pic img{
+	width: 80px;
+	height: 80px;
+	border-radius: 10%;
+}
+section .username,.psd{
+	display: block;
+	border-radius: .3rem;
+	width: 300px;
+	height: 30px;
+	
+}
+.myform .un{
+	color: #000;
+	font-size: 15px;
+	display: block;
+	margin-top: 40px;
+
+}
+.myform .ps{
+	display: block;
+	color: #000;
+	font-size: 15px;
+	padding-top: 40px;
+}
+.myform .ps .fs{
+	color: gray;
+	font-size: 15px;
+	float: right;
+}
+.myform .sign{
+	width: 300px;
+	height: 40px;
+	margin-top: 40px;
+	background: purple;
+	font-size: 18px;
+	color: white;
+}
+section footer{
+	text-align: center;
+	margin-top: 10px;
+	color: gray;
+}
+section footer .up{
+	color: royalblue;
+}

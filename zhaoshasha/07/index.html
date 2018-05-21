@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<title>表单</title>
+		<link media="(max-width:320px)" rel="stylesheet" href="css/mobile.css" />
+		<link media="(min-width:321px)" rel="stylesheet" href="css/form.css" />
+	</head>
+
+	<body>
+		<header>
+			<div class="item1">
+				<span class="bs">Bootstrap&nbsp;Themes</span>
+				<span class="kind">Catagories sell Themes</span>
+			</div>
+			<div class="item2">
+				<img src="img/search.png" />
+				<span class="in">sign in</span>
+				<span class="out">sign out</span>
+			</div>
+		</header>
+		<section>
+			<div class="pic">
+				<img src="img/B.png" />
+			</div>
+			<form class="myform">
+				<span class="un">Username</span>
+				<input type="text" name="username" class="username" />
+				<div class="ps">
+					<span>Password</span>
+					<span class="fs">Forget password?</span>
+				</div>
+				<input type="password" name="psd" class="psd" />
+				<button class="sign">Sign in</button>
+			</form>
+			<footer class="footer">Don't have an accd.int yet?<span class="up">Sign Up</span></footer>
+		</section>
+		<script type="text/javascript" src="js/jquery-1-11.1-min.js"></script>
+		<script type="text/javascript" src="js/validate.js"></script>
+		<script type="text/javascript" src="js/messages_zh.js"></script>
+		<script type="text/javascript" src="js/jquery-cookie-1.3.1.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$(".myform").validate({
+					rules: {
+						username: {
+							required: true,
+							minlength: 2
+						},
+						psd: {
+							required: true,
+							digits: true,
+							minlength: 6
+						}
+
+					},
+					messages: {
+						username: {
+							required: "用户名不能为空!",
+							minlength: "用户名为admin!"
+						},
+						psd: {
+							required: "密码为123!",
+							digits: "密码必须是数字!",
+							minlength: "密码为123!"
+						}
+					},
+
+				});
+			})
+
+			$('.sign').click(function() {
+
+				$.ajax({
+					//请求方式  
+					type: "GET",
+					//文件位置  
+					url: "js/test.json",
+					//返回数据格式为json,也可以是其他格式如  
+					dataType: "json",
+					//请求成功后要执行的函数，拼接html  
+					success: function(data) {
+						var str = "";
+						str = "用户名" + data.username + "密码" + data.psd;
+						alert(str);
+						$(".in").html(data.username + "欢迎你");
+					}
+
+				});
+				alert("error");
+
+			});
+			document.cookie = 'name=admin';
+
+			function SetCookie(name, value, expires, path, domain, secure) {
+				var today = new Date();
+				today.setTime(today.getTime());
+				if(expires) {
+					expires *= 86400000;
+				}
+				var expires_date = new Date(today.getTime() + (expires));
+				document.cookie = name + "=" + escape(value) +
+					(expires ? ";expires=" + expires_date.toGMTString() : "") +
+					(path ? ";path=" + path : "") +
+					(domain ? ";domain=" + domain : "") +
+					(secure ? ";secure" : "");
+			}
+
+			function getCookieByString(cookieName) {
+				var start = document.cookie.indexOf(cookieName + '=');
+				if(start == -1) return false;
+				start = start + cookieName.length + 1;
+				var end = document.cookie.indexOf(';', start);
+				if(end == -1) end = document.cookie.length;
+				return document.cookie.substring(start, end);
+			}
+		</script>
+
+	</body>
+
+</html>
