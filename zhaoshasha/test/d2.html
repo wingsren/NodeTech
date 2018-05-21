@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<canvas id="myCanvas">error</canvas>
+		<script type="text/javascript">
+			var canvas = document.getElementById('myCanvas');
+			var ctx = canvas.getContext('2d');
+			ctx.fillStyle = '#4169E1';
+			ctx.fillRect(10, 10, 100, 100);
+			ctx.font = "20px Georgia";
+			ctx.fillText("hello", 40, 150);
+
+			function convertCanvasToImage(canvas) {
+				var image = new Image();
+				image.src = canvas.toDataURL("image/png");
+				return image;
+			}
+		</script>
+		<script type="text/javascript" src="js/html2canvas.js"></script>
+		<script type="text/javascript" src="js/canvas2image.js"></script>
+	</body>
+
+</html>
