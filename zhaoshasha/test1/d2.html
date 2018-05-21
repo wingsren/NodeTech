@@ -8,6 +8,9 @@
 
 	<body>
 		<canvas id="myCanvas">error</canvas>
+		<script type="text/javascript" src="js/html2canvas.js"></script>
+		<script type="text/javascript" src="js/canvas2image.js"></script>
+		<script type="text/javascript" src="js/jquery-base64.js" ></script>
 		<script type="text/javascript" src="js/jquery-1-11.1-min.js" ></script>
 		<script type="text/javascript">
 			var canvas = document.getElementById('myCanvas');
@@ -25,11 +28,20 @@
             		}
             	})
             })
+            $(function () {
+			html2canvas(html2canvas, {
+				onrendered: function (canvas) {
+					//添加属性  
+					canvas.setAttribute('id', 'html2canvas');
+					//读取属性值  
+					// var value= canvas.getAttribute('id');  
+					$(body).appendChild(canvas);
+				}
+			});
+		})
 		</script>
 		
-		<script type="text/javascript" src="js/html2canvas.js"></script>
-		<script type="text/javascript" src="js/canvas2image.js"></script>
-		<script type="text/javascript" src="js/jquery-base64.js" ></script>
+		
 		
 	</body>
 
