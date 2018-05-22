@@ -5,16 +5,19 @@
 		<title>canvas图片保存</title>
 	</head>
 	<body>
+		<style>
+	
+		</style>
 		<script type="text/javascript" src="js/jquery-1-11.1-min.js" ></script>
 		<script type="text/javascript" src="js/canvas2image.js" ></script>
 		<script type="text/javascript" src="js/html2canvas.js" ></script>
 		<div id="savearea">
 			<h3>hello</h3>
-			<img src="img/B.png"/>
+			<img src="img/yx.png"/>
 		</div>
 		
 		<div class="info">
-			长按图片保存
+			长按图片进行保存
 		</div>
 		
 		<div id="h5canvas">
@@ -29,7 +32,7 @@
 			html2canvas(document.querySelector("#savearea")).then(function(canvas){
 				document.querySelector("#h5canvas").appendChild(canvas);
 				var oCanvas = document.getElementsByTagName("canvas")[0];
-				var oImgPng = Canvas2Image.saveAsPNG(oCanvas);
+				var oImgPng = Canvas2Image.saveAsPNG(oCanvas, true);
 				document.getElementById("h5img").appendChild(oImgPng);
 				$('.info').show();
 				if($('.info').is(":visible")){
@@ -43,3 +46,5 @@
 		
 	</body>
 </html>
+
+
